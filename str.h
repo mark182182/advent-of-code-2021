@@ -13,6 +13,7 @@ typedef struct {
 } str;
 
 str *str_new(char *chars, size_t buf) {
+  /* We should use a smaller buffer for str, because char* is a pointer, so its size is only the size of the pointer and not the whole string it is pointing to */
   str *s = (str *)malloc(buf * 3);
   s->buf = buf * sizeof(char);
   s->chars = (char *)malloc(buf);
